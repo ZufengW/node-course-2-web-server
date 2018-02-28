@@ -4,6 +4,7 @@ const fs = require('fs');
 
 var app = express();
 
+// this folder is where the partials are kept
 hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
 // ========= Middleware =======
@@ -53,6 +54,7 @@ app.get('/bad', (req, res) => {
   });
 });
 
+// ============ Listen ===============
 app.listen(3000, () => {
   console.log('listening on port 3000');
 });
