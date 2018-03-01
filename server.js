@@ -7,7 +7,7 @@ var app = express();
 // this folder is where the partials are kept
 hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
-// ========= Middleware =======
+// ============== Middleware ==================
 app.use((req, res, next) => {
   var now = new Date().toString();
   var log = `${now}: ${req.method} ${req.url}`;
@@ -25,7 +25,7 @@ app.use((req, res, next) => {
 // });
 app.use(express.static(__dirname + '/public'));
 
-// ============ hbs helpers ===========
+// ============ hbs helpers =============
 hbs.registerHelper('getCurrentYear', () => {
   return new Date().getFullYear();
 });
@@ -34,7 +34,7 @@ hbs.registerHelper('screamIt', (text) => {
 });
 
 
-// ========== Routes ================
+// ============= Routes ================
 app.get('/', (req, res) => {
   res.render('home', {
     pageTitle: 'Home page',
